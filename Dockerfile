@@ -11,7 +11,7 @@ RUN curl https://apt.releases.hashicorp.com/gpg --output /tmp/gpg_key && \
     APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1 apt-key add /tmp/gpg_key && \
     apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com focal main" && \
     apt-get update -y && \
-    apt-get -yq install vault && \
+    apt-get -yq install vault jq && \
     setcap -r /usr/bin/vault && \
     apt-get clean all && \
     rm -rf /var/lib/apt/lists/*
